@@ -21,12 +21,14 @@ grid = Grid(5)
 
 def rhombus(grid):
     mid = grid.grid_size // 2
-    empty_spaces = mid
+    placeholder = mid
+
     for row_num in range(grid.grid_size):
+        empty_spaces = abs(placeholder)
         for i in range(grid.grid_size - 2 * empty_spaces):
             grid.set(mid + (mid - empty_spaces) - i, row_num, "O")
             
-        empty_spaces = abs(empty_spaces - 1)
+        placeholder = placeholder - 1
     
 rhombus(grid)
 grid.display()
