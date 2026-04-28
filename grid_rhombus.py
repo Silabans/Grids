@@ -1,7 +1,7 @@
 class Grid:
     def __init__(self, grid_size, char:str = "."):
         self.grid_size =  grid_size
-        self.grid = ["."] * grid_size**2
+        self.grid = [char] * grid_size**2
         
     def get(self, x, y):
         return self.grid[y * self.grid_size + x]
@@ -17,9 +17,10 @@ class Grid:
                 print(self.get(k, j), end="  ")
             print()
                 
-grid = Grid(5)
+grid = Grid(27)
 
 def rhombus(grid):
+    """ Adds a rhombus shape into a grid object that has an odd grid size."""
     mid = grid.grid_size // 2
     placeholder = mid
 
